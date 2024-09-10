@@ -40,7 +40,7 @@ It is **not** compatible with E**3** series motors. Previous generations have di
 <img src="docs/Images/webinterface.png" width="400">
 
 
-# Buy a ready to use kit [here](https://github.com/Gifford47/HCPBridgeMqtt/discussions/83) :rocket:
+# Buy a ready to use PCB on [shop.tynet.eu](https://shop.tynet.eu/rs485-bridge-diy-hoermann-mqtt-adapter-esp32-s3-dev-board) :rocket:
 
 ## ... or ...
 
