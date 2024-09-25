@@ -27,7 +27,7 @@ The DHT sensor uses a onewire connecting, so you can use one of the onewire expa
 
 To make it work you need to flash the correct Software named: **esp32s3_tynet_DHT22**
 
-![pinout DHT22](Images/docs/Images/DHT22_pinout_tynet.png)
+![pinout DHT22](Images/DHT22_pinout_tynet.png)
 
 ### BMP280
 
