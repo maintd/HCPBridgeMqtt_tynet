@@ -3,6 +3,8 @@
 If you bought a prebuild PCB from either Tynet.eu or someone else you can follow this setp by step guide to setup your HCP-Bridge with your Hörmann Garage Door.
 These instructions focus on the tynet.eu PCB version, but it will be really similar with all PCBs.
 
+You want to connect temperature sensors or something else? See our guide: [Connecting sensors on tynet boards](connecting_sensors_prebuild_pcbs.md)
+
 ## What you need
 
 * Prebuild PCB with HCPBridge Firmware installed (installed out of the box on tynet.eu PCBs)
