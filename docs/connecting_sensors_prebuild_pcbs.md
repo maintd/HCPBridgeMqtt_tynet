@@ -1,6 +1,6 @@
 # How to connect sensors to a prebuild PCBs
 
-The prebiuld PCBs sold by tynet.eu have four expansion ports ready to be extended with temperature sensors and more.
+The prebuild PCBs sold by tynet.eu have four expansion ports ready to be extended with temperature sensors and more.
 Adding a sensor is NOT plug & play currently, but still simple to get up and running.
 
 After connecting it you will need to flash the correct Software over OTA Update to make it work.
@@ -41,3 +41,5 @@ It can be just connected to the port as is, otherwise you need to connect the pi
 | GND | GND |
 | IO_5 | SCL |
 | IO_6 | SDA |
+
+![connected bme280](Images/BME2080_tyneteu.png)
