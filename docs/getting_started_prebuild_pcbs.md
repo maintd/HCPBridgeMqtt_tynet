@@ -20,6 +20,8 @@ You want to connect temperature sensors or something else? See our guide: [Conne
 
 ### 4. Open the "Basic Configuration" tab and enter your WIFI and MQTT credentials, then click save.
 
+Note: The wifi password has to be ASCII chars between ASCII 32-126.
+
 ![basic config](Images/webui_basic_config.png)
 
 ### 5. The PCB should now be connected to your wifi. You can now check if it is reachable from your home network and if it connected to your MQTT Server.
