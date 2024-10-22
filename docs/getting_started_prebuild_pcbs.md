@@ -20,7 +20,9 @@ You want to connect temperature sensors or something else? See our guide: [Conne
 
 ### 4. Open the "Basic Configuration" tab and enter your WIFI and MQTT credentials, then click save.
 
-Note: The wifi password has to be ASCII chars between ASCII 32-126.
+> Note: The wifi password has to be ASCII chars between ASCII 32-126.
+
+> Tip: To disable the wifi AP just uncheck the "Enable wifi AP" checkbox and save
 
 ![basic config](Images/webui_basic_config.png)
 
