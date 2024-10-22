@@ -7,3 +7,4 @@ clean.bat
 config.h
 *.bak
 *.bin
+!/fw/*.bin

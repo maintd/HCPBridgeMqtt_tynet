@@ -68,8 +68,8 @@
 
     // NOTICE: Breadboards should have 2k2 or 3k3 PullUp resistor between SCL and SDA! If not: interferences
     //BME280                     
-    #define I2C_SDA 21
-    #define I2C_SCL 22
+    #define I2C_SDA 6
+    #define I2C_SCL 5
 
     //HC-SR04                   
     #define SR04_TRIGPIN 5
@@ -78,7 +78,7 @@
     #define SOUND_SPEED 0.034   //define sound speed in cm/uS
 
     // DHT22
-    #define DHTPIN 27
+    #define DHTPIN 4
     #define DHTTYPE DHT22
 
     //HC-SR501
