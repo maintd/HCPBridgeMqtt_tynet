@@ -5,6 +5,8 @@ Adding a sensor is NOT plug & play currently, but still simple to get up and run
 
 After connecting it you will need to flash the correct Software over OTA Update to make it work.
 
+You can find the firmware files here: [Firmware Files for OTA](https://github.com/Tysonpower/HCPBridgeMqtt_tynet/tree/main/HCPBridgeESP32/fw)
+
 ## The expansion ports
 
 | Name        | Pin 1 | Pin 2 | Pin 3 | Pin 4 |
