@@ -1099,6 +1099,9 @@ void setup()
                   dtostrf(dht22_temp,2,1,buf);
                   strcat(buf, " °C");
                   sensors["temp"] = buf;
+                  dtostrf(dht22_hum,2,1,buf); 
+                  strcat(buf, " %");
+                  sensors["hum"] = buf;
                 #endif
                 #ifdef USE_HCSR04
                   dtostrf(hcsr04_distanceCm,2,0,buf);
