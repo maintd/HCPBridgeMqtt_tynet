@@ -268,3 +268,64 @@ The switch for the venting position works with a small hack. Based on the analys
 ![Homeassistant card1](docs/Images/ha_shuttercard.png)
 ![Homeassistant card2](docs/Images/ha.png)
 </details>
+
+## Web Services
+
+<details>
+<summary>Send commands</summary>
+
+URL: **http://[deviceip]/command?action=[id]**
+<br>
+
+| id | Function | Other Parameters
+|--------|--------------|--------------|
+| 0 | Close | |
+| 1 | Open | |
+| 2 | Stop | |
+| 3 | Ventilation | |
+| 4 | Half Open | |
+| 5 | Light toggle | |
+| 6 | Restart | |
+| 7 | Set Position | position=[0-100] |
+
+</details>
+
+<details>
+<summary>Status report</summary>
+
+URL: **http://[deviceip]/status**
+<br>
+
+Response:
+```
+{
+"valid": true,
+"doorstate": 64,
+"doorposition": 0,
+"doortarget": 0,
+"lamp": false,
+"temp": 19.94000053,
+"lastresponse": 0,
+"looptime": 1037,
+"lastCommandTopic": "hormann/garage_door/command/door",
+"lastCommandPayload": "close"
+}
+```
+</details>
+
+<details>
+<summary>Wifi status</summary>
+
+URL: **http://[deviceip]/sysinfo**
+<br>
+</details>
+
+<details>
+<summary>OTA Firmware update</summary>
+
+URL: **http://[deviceip]/update**
+<br>
+
+![image](https://user-images.githubusercontent.com/14005124/215216505-8c5abe46-5d40-402b-963a-e3825c63d417.png)
+
+</details><br>
