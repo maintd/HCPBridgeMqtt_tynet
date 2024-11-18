@@ -7,6 +7,8 @@ After connecting it you will need to flash the correct Software over OTA Update 
 
 You can find the firmware files here: [Firmware Files for OTA](https://github.com/Tysonpower/HCPBridgeMqtt_tynet/tree/main/HCPBridgeESP32/fw)
 
+Login for OTA is admin/admin.
+
 ## The expansion ports
 
 | Name        | Pin 1 | Pin 2 | Pin 3 | Pin 4 |
