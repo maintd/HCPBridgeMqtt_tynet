@@ -47,5 +47,18 @@ hcp_wifi_ap_password: "tynet.eu"
 <img width="857" alt="image" src="https://github.com/user-attachments/assets/d6283427-480f-4128-8c11-9a84b51699a7">
 
 
-9. Click install, then select Manual download, wait for the firmware to be build, select factory image to get the.bin file
+9. Click install, then select Manual download, wait for the firmware to be build, select factory format to get the.bin file
 <img width="1070" alt="image" src="https://github.com/user-attachments/assets/bc316b5e-8e84-47a2-a0fb-bd4f69eaa117">
+
+<img width="1070" alt="image" src="https://github.com/user-attachments/assets/efff77d5-2ae1-4152-be38-c851fb496f2b">
+
+10. Then go to [web.esphome.io](https://web.esphome.io/), click connect and select your ESP from the device list, click INSTALL, select the .bin file you just downloaded and click Install.
+If it doesen't work, try it multiple times
+<img width="1070" alt="image" src="https://github.com/user-attachments/assets/5d1d382a-e449-4071-835c-67cbf3130ed4">
+
+11. go back to home assistant, open settings->devices->esphome, here you should be able to add the device, if not try to powercycle the board
+<img width="1056" alt="image" src="https://github.com/user-attachments/assets/4d591352-ec6e-4184-b109-da8ef8a03a5a">
+
+Click done and you can now use the Device
+<img width="1056" alt="image" src="https://github.com/user-attachments/assets/f918b4ef-936f-4581-8b93-9a31abca524a">
+
