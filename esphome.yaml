@@ -38,7 +38,7 @@ esp32:
     type: arduino
 
 dashboard_import:
-  package_import_url: github://Tysonpower/HCPBridgeMqtt_tynet/esphome.yaml
+  package_import_url: github://Tysonpower/HCPBridgeMqtt_tynet/esphome.yaml@main
 
 i2c:
   sda: GPIO06
