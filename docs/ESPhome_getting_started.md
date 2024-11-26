@@ -16,6 +16,24 @@ The main steps are:
 2. Go to Settings->Add-Ons->Add-on Store and search for ESPHome
 3. Install and activate the ESPHome addon
 
+## Preflashed board Setup
+
+1. Power the board over USB-C
+2. search and connect to the wifi called `hcpbridge`
+3. open http://192.168.4.1 when connected, login is `user: admin pass: tynet.eu`
+4. Connect to your wifi network over the UI
+5. open home Assistant, go to Devices->ESPHome, there the device should have been discovered, adopt it.
+![image](https://github.com/user-attachments/assets/8ff8fc40-bd0e-43c2-8afe-ef18865859ba)
+
+## Change preflashed config (Optional)
+
+1. open home assistant and go to the ESPHOme UI under Add-Ons
+2. You should see the dicovered device, press take control, if you like change the name. Skip/close any popups
+![image](https://github.com/user-attachments/assets/04714647-a317-4312-9d11-c7755bf53faf) 
+
+3. 
+
+
 ## Setup the board in Home Assistant
 
 1. Open ESPHome in Home Assistant
