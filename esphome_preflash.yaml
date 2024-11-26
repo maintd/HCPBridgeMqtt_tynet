@@ -15,6 +15,9 @@ substitutions:
 esphome:
   name: "${name}"
   friendly_name: "${friendly_name}"
+  project:
+    name: "tynet.hcpbridge_e4"
+    version: "1.0.0"
   libraries:
     - emelianov/modbus-esp8266
   platformio_options:
@@ -33,6 +36,9 @@ esp32:
   board: adafruit_feather_esp32s3
   framework:
     type: arduino
+
+dashboard_import:
+  package_import_url: github://Tysonpower/HCPBridgeMqtt_tynet/esphome.yaml
 
 i2c:
   sda: GPIO06
@@ -131,8 +137,6 @@ sensor:
     update_interval: 30s
 
 api:
-  encryption:
-    key: !secret api_key
   services:
     - service: go_to_open
       then:
@@ -161,13 +165,11 @@ web_server:
     password: !secret web_password
 
 wifi:
-  ssid: !secret wifi_ssid
-  password: !secret wifi_password
-  ap:
-    ssid: "HCPBRIDGE"
-    password: !secret hcp_wifi_ap_password
+  ap: {} # This spawns an AP with the device name and mac address with no password.
 
 captive_portal:
+
+improv_serial:
 
 # Enable logging
 logger:
