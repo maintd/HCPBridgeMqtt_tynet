@@ -4,7 +4,7 @@ Our boards from tynet.eu ship with the normal Arduino based Firmware that is sim
 Sadly this software that was developed over the past years got some minor inconveniences that are not simple to fix.
 If you are one of the few people that have an issue with th software or just wan't to use ESPHome instead you can follow this guide
 
-ESPHome uses a native Home Assistant API instead of MQTT and is simple to setup, we also porivde configuration files for our boards.
+ESPHome uses a native Home Assistant API instead of MQTT and is simple to setup, we also porivde configuration files as well as ready to flash bin files for our boards.
 
 ## Setup ESPHome in Home Assistant
 
@@ -16,16 +16,34 @@ The main steps are:
 2. Go to Settings->Add-Ons->Add-on Store and search for ESPHome
 3. Install and activate the ESPHome addon
 
-## Preflashed board Setup
+## Upgrade from non ESPHome firmware
 
-1. Power the board over USB-C
-2. search and connect to the wifi called `hcpbridge`
-3. open http://192.168.4.1 when connected, login is `user: admin pass: tynet.eu`
+Our boards all ship with a non ESPhome based firmware, it can be upgraded really simple.
+
+1. Ensure your baord is powered over USB-C 
+2. Download firmware file: [esphome_hcpbridge.ota.bin]()
+3. Connect to your board and open the OTA webui: [http://192.168.4.1/update](http://192.168.4.1/update)
+4. If asked use the following credentials to login: `user: admin pass: admin`
+5. Click "Select File", navigate to the downloaded ota file from step 1, 
+
+## Board Setup
+
+### Using USB (recommended)
+
+1. Ensure your board is connected to your PC over USB-C
+2. Open [web.esphome.io](https://web.esphome.io), click connect, select the ESP32-S3 device from the list
+3. Click the 3 point menu and select Configure Wifi, select or anter your wifi name and password
+
+### Using WiFi
+
+1. Ensure your board is powered over USB-C
+2. Search and connect to the wifi called `hcpbridge`
+3. Open http://192.168.4.1 when connected, login is `user: admin pass: tynet.eu`
 4. Connect to your wifi network over the UI
-5. open home Assistant, go to Devices->ESPHome, there the device should have been discovered, adopt it.
+5. Open home Assistant, go to Devices->ESPHome, there the device should have been discovered, adopt it.
 ![image](https://github.com/user-attachments/assets/8ff8fc40-bd0e-43c2-8afe-ef18865859ba)
 
-Alternative: if your device is connected by usb to your PC, you can also use [web.esphome.io](https://web.esphome.io) to change the wifi credentials over serial.
+
 
 ## Change preflashed config (Optional)
 
