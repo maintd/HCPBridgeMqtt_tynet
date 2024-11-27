@@ -18,10 +18,10 @@ The main steps are:
 
 ## Upgrade from non ESPHome firmware
 
-Our boards all ship with a non ESPhome based firmware, it can be upgraded really simple.
+Our boards all ship with a non ESPHome based firmware, it can be upgraded really simple.
 
-1. Ensure your baord is powered over USB-C 
-2. Download firmware file: [esphome_hcpbridge.ota.bin]()
+1. Ensure your board is powered over USB-C 
+2. Download firmware file: [ESPHome_hcpbridge.ota.bin]()
 3. Connect to your board and open the OTA webui: [http://192.168.4.1/update](http://192.168.4.1/update)
 4. If asked use the following credentials to login: `user: admin pass: admin`
 5. Click "Select File", navigate to the downloaded ota file from step 1, 
@@ -31,8 +31,12 @@ Our boards all ship with a non ESPhome based firmware, it can be upgraded really
 ### Using USB (recommended)
 
 1. Ensure your board is connected to your PC over USB-C
-2. Open [web.esphome.io](https://web.esphome.io), click connect, select the ESP32-S3 device from the list
+2. Open [web.ESPHome.io](https://web.esphome.io), click connect, select the ESP32-S3 device from the list
 3. Click the 3 point menu and select Configure Wifi, select or anter your wifi name and password
+<img width="659" alt="image" src="https://github.com/user-attachments/assets/789d1c11-b7df-4c48-9421-5397f1cb5cc1">
+
+4. After entering your wifi credentials click connect
+<img width="419" alt="image" src="https://github.com/user-attachments/assets/e22cbe8f-8ec8-42d8-8ec0-0d80b87ba629">
 
 ### Using WiFi
 
@@ -40,20 +44,31 @@ Our boards all ship with a non ESPhome based firmware, it can be upgraded really
 2. Search and connect to the wifi called `hcpbridge`
 3. Open http://192.168.4.1 when connected, login is `user: admin pass: tynet.eu`
 4. Connect to your wifi network over the UI
-5. Open home Assistant, go to Devices->ESPHome, there the device should have been discovered, adopt it.
-![image](https://github.com/user-attachments/assets/8ff8fc40-bd0e-43c2-8afe-ef18865859ba)
+____
 
+Now your board should be connected to your home network over wifi.
+
+Open home Assistant, go to Devices, here the garage door should be visible under discovered devices, just click "Add".
+
+![image](https://github.com/user-attachments/assets/278d3c7b-f70f-47df-ab5e-c5430bf2f175)
 
 
 ## Change preflashed config (Optional)
 
-1. open home assistant and go to the ESPHOme UI under Add-Ons
-2. You should see the dicovered device, press take control, if you like change the name
-![image](https://github.com/user-attachments/assets/04714647-a317-4312-9d11-c7755bf53faf) 
-3. it will ask to update the device with encryption, click install and select one of the options (web for example)
+1. open home assistant and go to the ESPHome UI under Add-Ons
+2. You should see the dicovered device, press take control. if you like, change the name
+![image](https://github.com/user-attachments/assets/04714647-a317-4312-9d11-c7755bf53faf)
+
+4. it will ask to update the device with encryption, click install, it will take a wile to build the new firmware
+![image](https://github.com/user-attachments/assets/38ce6137-78ff-4f72-aea1-fe9cc9cb473d)
+
+5. When it finished uploading you will see the following log output, if this is the case you can press close and you are done
+![image](https://github.com/user-attachments/assets/21efb5b9-3eea-4ca7-b932-d811f7a52831)
+
+In some cases you need to set your wifi credentials again afterwards like before
 
 
-## Setup the board in Home Assistant
+## Setup ESPHome in Home Assistant from scratch
 
 1. Open ESPHome in Home Assistant
 2. Connect your board only via usb to your PC
@@ -80,7 +95,7 @@ hcp_wifi_ap_password: "tynet.eu"
 7. Click Edit on the device card
 <img width="404" alt="image" src="https://github.com/user-attachments/assets/0c3b92ee-bd92-488f-8b1d-f8b9932b61c1">
 
-8. Copy paste the content of the esphome.yaml file from this repo into the editor, click save
+8. Copy paste the content of the ESPHome.yaml file from this repo into the editor, click save
 <img width="857" alt="image" src="https://github.com/user-attachments/assets/d6283427-480f-4128-8c11-9a84b51699a7">
 
 
@@ -89,11 +104,11 @@ hcp_wifi_ap_password: "tynet.eu"
 
 <img width="1070" alt="image" src="https://github.com/user-attachments/assets/efff77d5-2ae1-4152-be38-c851fb496f2b">
 
-10. Then go to [web.esphome.io](https://web.esphome.io/), click connect and select your ESP from the device list, click INSTALL, select the .bin file you just downloaded and click Install.
+10. Then go to [web.ESPHome.io](https://web.esphome.io/), click connect and select your ESP from the device list, click INSTALL, select the .bin file you just downloaded and click Install.
 If it doesen't work, try it multiple times
 <img width="1070" alt="image" src="https://github.com/user-attachments/assets/5d1d382a-e449-4071-835c-67cbf3130ed4">
 
-11. go back to home assistant, open settings->devices->esphome, here you should be able to add the device, if not try to powercycle the board
+11. go back to home assistant, open settings->devices->ESPHome, here you should be able to add the device, if not try to powercycle the board
 <img width="1056" alt="image" src="https://github.com/user-attachments/assets/4d591352-ec6e-4184-b109-da8ef8a03a5a">
 
 Click done and you can now use the Device
