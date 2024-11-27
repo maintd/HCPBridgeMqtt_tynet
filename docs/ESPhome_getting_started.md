@@ -25,13 +25,14 @@ The main steps are:
 5. open home Assistant, go to Devices->ESPHome, there the device should have been discovered, adopt it.
 ![image](https://github.com/user-attachments/assets/8ff8fc40-bd0e-43c2-8afe-ef18865859ba)
 
+Alternative: if your device is connected by usb to your PC, you can also use [web.esphome.io](https://web.esphome.io) to change the wifi credentials over serial.
+
 ## Change preflashed config (Optional)
 
 1. open home assistant and go to the ESPHOme UI under Add-Ons
-2. You should see the dicovered device, press take control, if you like change the name. Skip/close any popups
+2. You should see the dicovered device, press take control, if you like change the name
 ![image](https://github.com/user-attachments/assets/04714647-a317-4312-9d11-c7755bf53faf) 
-
-3. 
+3. it will ask to update the device with encryption, click install and select one of the options (web for example)
 
 
 ## Setup the board in Home Assistant
