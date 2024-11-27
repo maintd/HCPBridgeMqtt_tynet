@@ -21,7 +21,7 @@ The main steps are:
 Our boards all ship with a non ESPHome based firmware, it can be upgraded really simple.
 
 1. Ensure your board is powered over USB-C 
-2. Download firmware file: [ESPHome_hcpbridge.ota.bin]()
+2. Download ESPHome based firmware file: [hcpbridge.ota.bin](https://github.com/Tysonpower/HCPBridgeMqtt_tynet/raw/refs/heads/main/hcpbridge.ota.bin)
 3. Connect to your board and open the OTA webui: [http://192.168.4.1/update](http://192.168.4.1/update)
 4. If asked use the following credentials to login: `user: admin pass: admin`
 5. Click "Select File", navigate to the downloaded ota file from step 1, 
