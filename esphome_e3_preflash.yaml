@@ -1,0 +1,148 @@
+# These substitutions allow the end user to override certain values
+substitutions:
+  name: "supramatic-e3"
+  friendly_name: "SupraMatic E3"
+  state: "State"
+  opening: "Opening"
+  closing: "Closing"
+  open: "Open"
+  closed: "Closed"
+  stopped: "Stopped"
+  venting: "Venting"
+  error: "Error"
+  relay_state: "Relay state"
+  got_valid_broadcast: "Valid Status received" 
+  error_state: "Error State" 
+  prewarn_state: "Prewarn State" 
+  light: "${friendly_name} Light"
+  sw_vent: "${friendly_name} Venting" 
+  sw_light: "Switch Light" 
+  btn_vent: "${friendly_name} Vent" 
+  btn_impulse: "${friendly_name} Impulse" 
+
+esphome:
+  name: "${name}"
+  friendly_name: "${friendly_name}"
+  project:
+    name: "tynet.hcpbridge_e3"
+    version: "1.0.0"
+  platformio_options:
+    board_build.f_cpu: 240000000L
+    board_build.flash_mode: qio
+    monitor_speed: 9600
+    monitor_filters: esp32_exception_decoder
+    lib_ldf_mode: deep+
+    # board_build.f_flash: 40000000L
+
+external_components:
+    - source: github://Tysonpower/hoermann_door
+      refresh: 0s
+
+esp32:
+  board: adafruit_feather_esp32s3
+  framework:
+    type: esp-idf # mandatory for esp version
+
+dashboard_import:
+  package_import_url: github://Tysonpower/HCPBridgeMqtt_tynet/esphome_e3.yaml@main
+
+i2c:
+  sda: GPIO06
+  scl: GPIO05
+  scan: false
+
+wifi:
+  ap: {} # This spawns an AP with the device name and mac address with no password.
+
+captive_portal:
+
+improv_serial:
+
+api:
+  
+ota:
+  - platform: esphome
+
+web_server:
+  port: 80
+  version: 3
+  auth:
+    username: !secret web_username
+    password: !secret web_password
+
+# Enable logging
+logger:
+  level: DEBUG
+  baud_rate: 9600
+
+uart:
+  id: uart_bus
+  baud_rate: 19200
+  rx_pin: 18
+  tx_pin: 17
+
+# UAP Config from here ----------------------------------------
+uapbridge_esp:
+  id: garage_door_comp
+  # rts_pin: 4 # this can be set, if needed for the connected hardware
+  uart_id: uart_bus
+  auto_correction: true
+
+cover:
+  - platform: uapbridge
+    name: ${friendly_name}
+    device_class: garage
+
+switch:
+  - platform: uapbridge
+    venting_switch:
+      id: venting_switch
+      name: "${sw_vent}"
+#uncomment if you want to use the switch insteat of the light component for light
+#    light_switch:
+#      id: light_switch
+#      name: "${sw_light}"
+
+binary_sensor:
+  - platform: uapbridge
+    relay_state:
+      name: "${relay_state}"
+    error_state:
+      name: "${error_state}"
+    prewarn_state:
+      name: "${prewarn_state}"
+    got_valid_broadcast:
+      name: "${got_valid_broadcast}"
+
+output:
+  - platform: uapbridge
+    id: gd_light
+
+light:
+  - platform: uapbridge
+    id: my_light
+    name: "${light}"
+    output: gd_light
+
+text_sensor:
+  - platform: uapbridge
+    id: garage_door_state
+    name: "${state}"
+#    filters:
+#      - substitute:
+#        - "Opening -> ${opening}"
+#        - "Closing -> ${closing}"
+#        - "Open -> ${open}"
+#        - "Closed -> ${closed}"
+#        - "Stopped -> ${stopped}"
+#        - "Venting -> ${venting}"
+#        - "Error -> ${error}"
+
+button:
+  - platform: uapbridge
+    vent_button:
+      id: button_vent
+      name: "${btn_vent}"
+    impulse_button:
+      id: button_impulse
+      name: "${btn_impulse}"
