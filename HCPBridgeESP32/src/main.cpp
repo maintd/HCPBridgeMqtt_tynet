@@ -1034,6 +1034,9 @@ void setup()
       I2CBME.begin(i2c_sdapin, i2c_sclpin);   // https://randomnerdtutorials.com/esp32-i2c-communication-arduino-ide/
       bme_status = bme.begin(0x76, &I2CBME);  // check sensor. adreess can be 0x76 or 0x77
       //bme_status = bme.begin();  // check sensor. adreess can be 0x76 or 0x77
+      if (!bme_status) {
+        bme_status = bme.begin(0x77, &I2CBME);  // check sensor. address can be 0x76 or 0x77
+      }
     #endif
     #ifdef USE_HCSR04
       hcsr04_tgpin = localPrefs->getInt(preference_sensor_sr04_trigpin);
