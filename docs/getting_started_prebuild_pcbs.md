@@ -44,6 +44,9 @@ You want to connect temperature sensors or something else? See our guide: [Conne
 
 ## Installation
 
+> [!IMPORTANT]
+> DON'T connect the USB-C connector to your PC or a PSU while it's connected to the garage door motor with the RJ12 cable!
+
 ### 1. connect the PCB with a RJ12 cable to the BUS port on your Hörmann garage door motor (image below, see green arrow).
 
 ![Garage Motor](Images/antrieb-min.png)
@@ -72,6 +75,15 @@ Please follow our ESPHome instructions from the Board Setup step: [ESPHome - get
 
 > [!NOTE]
 > The default login for the WEBUI is user `admin` and password `tynet.eu`
+
+## Installation
+
+> [!IMPORTANT]
+> DON'T connect the USB-C connector to your PC or a PSU while it's connected to the garage door motor with the RJ12 cable!
+
+### 1. connect the PCB with a RJ12 cable to the BUS port on your Hörmann garage door motor
+
+### 2. The supramatic e3 should power the pcb over RJ12 and all should be working now.
 
 
 # Supramatic 4 - ESPHome based firmware
