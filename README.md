@@ -170,7 +170,8 @@ It is **not** compatible with E**3** series motors. Previous generations have di
   
   You can reset all preferences by pressing the BOOT button on the ESP for longer then 5 Seconds and releasing it.
   This will reset all preferences to the default values from configuration.h in the flashed firmware build.
-  
+</details><br>
+
 <details>
   <summary>Step 4: Installation and Bus Scan</summary>
  
