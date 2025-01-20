@@ -71,7 +71,7 @@ Use the Buttons to navigate to the menu 37 and excecute the Bus Scan, see here: 
 
 PCBs from tynet.eu for the Supramatic 3 are shipping preinstalled with ESPHome based firmware that is a bit different.
 
-Please follow our ESPHome instructions from the Board Setup step: [ESPHome - getting started](ESPhome_getting_started.md)
+Please follow our ESPHome instructions from the Board Setup step: [ESPHome - getting started](https://github.com/Tysonpower/HCPBridgeMqtt_tynet/blob/main/docs/ESPhome_getting_started.md#board-setup)
 
 > [!NOTE]
 > The default login for the WEBUI is user `admin` and password `tynet.eu`
