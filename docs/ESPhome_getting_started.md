@@ -52,6 +52,8 @@ Open home Assistant, go to Devices, here the garage door should be visible under
 
 ![image](https://github.com/user-attachments/assets/278d3c7b-f70f-47df-ab5e-c5430bf2f175)
 
+> [!NOTE]
+> You can now use the PCB as is and don't need to do the following optional steps.
 
 ## Change preflashed config (Optional)
 
