@@ -5,7 +5,10 @@ These instructions focus on the tynet.eu PCB version, but it will be really simi
 
 You want to connect temperature sensors or something else? See our guide: [Connecting sensors on tynet boards](connecting_sensors_prebuild_pcbs.md)
 
-## What you need
+
+# Series 4 - preinstalled firmware (non ESPHome)
+
+### What you need
 
 * Prebuild PCB with HCPBridge Firmware installed (installed out of the box on tynet.eu PCBs)
 * USB-C power supply
@@ -48,3 +51,20 @@ Use the Buttons to navigate to the menu 37 and excecute the Bus Scan, see here: 
 ### 4. if the bus scan was succesfully you can connect to the WEBUI and control your garage door motor, it should look like in the image below.
 
 ![Installation done](Images/webui_ready_and_installed.png)
+
+
+# Supramatic 3 - preinstalled firmware (ESPHome based)
+
+PCBs from tynet.eu for the Supramatic 3 come preinstalled with ESPHome based firmware that is a bit different.
+
+Please follow our ESPHome instructions from the Board Setup step: [ESPHome - getting started](ESPhome_getting_started.md)
+
+> [!IMPORTANT]
+> The default login for the WEBUI is user `admin` and password `tynet.eu`
+
+
+# Supramatic 4 - ESPHome based firmware
+
+PCBs from tynet.eu can be used with the Series 4 ESPHome based firmware as well, just follow our instructions on geting started with ESPHome, this also includes flashing instructions if you want to upgrade from the non ESPHome version.
+
+[ESPHome - getting started](ESPhome_getting_started.md)
