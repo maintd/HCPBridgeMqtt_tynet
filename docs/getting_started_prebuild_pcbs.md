@@ -34,6 +34,7 @@ You want to connect temperature sensors or something else? See our guide: [Conne
 
 > [!NOTE]
 > The wifi password has to be ASCII chars between ASCII 32-126.
+> The DeviceID can NOT include any spaces or special chars
 
 > [!TIP]
 > To disable the wifi AP just uncheck the "Enable wifi AP" checkbox and save
