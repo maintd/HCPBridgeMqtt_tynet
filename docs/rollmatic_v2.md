@@ -1,15 +1,15 @@
-# Rollmativ V2
+# RollMatic V2
 
-## Hardware part:
+## Hardware part
 
 * Remove power cord
 * Plug in RJ-11 connector
 * Plug-in power cord
 * Drive the garage door completely up or down once
 
-## Programming:
+## Programming
 
-* Hold "PGR" button until 10 is shown
+* Hold "PGR" button until "10" is shown
 * Press "Down" button until "37" is shown
 * Press "PRG" button once -> Display shows "00" (meaning "no external modules configured")
 * Press "Up" button once until 01 is shown (meaning "configure external module")
@@ -20,9 +20,8 @@
 * Menu goes back to "10"
 
 ## Troubleshooting Error "04"
-Hörmann Rollmatic v2 uses HCP2-Bus which requires external modules to be registered and unregistered via bus scan. Error "04" shows up when you want to drive the door, but the registered external module was removed without performing a bus scan afterwards. The door will not drive until the issue is solved.
+Hörmann RollMatic v2 uses HCP2-Bus which requires external modules to be registered and unregistered via bus scan. Error "04" shows up when you want to drive the door, but the registered external module was removed without performing a bus scan afterwards. The door will not drive until the issue is solved.
 
-This can be archieved by Powering off the door, re-attach the external module and power on again.
-Or by performing a complete factory reset of the Rollmatic v2.
+This can be achieved by powering off the door, re-attaching the external module and powering it on again. Or by performing a complete factory reset of the RollMatic v2.
 
-Unfortunately a simple un-registration of a registered (but non working or non-attached module) seems not possible since in my case, Error "04" prevents access to the programming menu after powering on.
+Unfortunately, a simple un-registration of a registered (but non-working or non-attached module) seems not possible since in my case, Error "04" prevents access to the programming menu after powering on.

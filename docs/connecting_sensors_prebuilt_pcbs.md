@@ -1,13 +1,13 @@
-# How to connect sensors to a prebuild PCBs
+# How to Connect Sensors to a Prebuilt PCB
 
-The prebuild PCBs sold by tynet.eu have four expansion ports ready to be extended with temperature sensors and more.
+The prebuilt PCBs sold by tynet.eu have four expansion ports ready to be extended with temperature sensors and more.
 Adding a sensor is NOT plug & play currently, but still simple to get up and running.
 
 After connecting it you will need to flash the correct Software over OTA Update to make it work.
 
 You can find the firmware files here: [Firmware Files for OTA](https://github.com/Tysonpower/HCPBridgeMqtt_tynet/tree/main/HCPBridgeESP32/fw)
 
-Login for OTA is admin/admin.
+Login for OTA is `user: admin` and `pass: admin`.
 
 ## The expansion ports
 
@@ -35,7 +35,7 @@ To make it work you need to flash the correct Software named: **esp32s3_tynet_DH
 
 ### BMP280
 
-The BMP280 Sensor is very popular and the EXP_1 port is optimized for it so most variatns you can get are pin compatible.
+The BMP280 Sensor is very popular and the EXP_1 port is optimized for it so most variants you can get are pin compatible.
 
 It can be just connected to the port as is, otherwise you need to connect the pins like the following:
 
