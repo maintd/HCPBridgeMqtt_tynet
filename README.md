@@ -41,7 +41,7 @@ It is **not** compatible with E**3** series motors. Previous generations use a d
 
 # Buy a ready to use PCB on [shop.tynet.eu](https://shop.tynet.eu/rs485-bridge-diy-hoermann-mqtt-adapter-esp32-s3-dev-board) :rocket:
 
-If you use a PCB from us, you can get started with our instructions: [Getting started with tynet.eu PCBs](docs/getting_started_prebuilt_pcbs)
+If you use a PCB from us, you can get started with our instructions: [Getting started with tynet.eu PCBs](docs/getting_started_prebuilt_pcbs.md)
 
 Would you like to use our ESPHome-based firmware, which offers a few advantages? See our guide: [Getting started with ESPHome](docs/getting_started_esphome.md)
 
