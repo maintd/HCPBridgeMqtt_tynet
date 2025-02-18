@@ -1,6 +1,6 @@
 # Getting Started with the Prebuilt PCBs
 
-If you bought a prebuilt PCB from either tynet.eu or someone else you can follow this setp by step guide to set up your HCP-Bridge with your Hörmann Garage Door.  
+If you bought a prebuilt PCB from either tynet.eu or someone else you can follow this step by step guide to set up your HCP-Bridge with your Hörmann Garage Door.  
 
 These instructions focus on the tynet.eu PCB version, but it will be really similar with all PCBs.
 
