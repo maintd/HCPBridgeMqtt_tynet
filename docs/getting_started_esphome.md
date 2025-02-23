@@ -78,21 +78,46 @@ Open Home Assistant, go to Devices, here the garage door should be visible under
 > [!NOTE]
 > You can now use the PCB as is and don't need to do the following optional steps.
 
-## Optional
+## Recommended
 
 ### Change pre-flashed config
 
-1. Open Home Assistant and go to the ESPHome UI under Add-Ons
-2. You should see the discovered device, click "take control". If you like, change the name
+Although the device is now ready to use, it is advisable to take control of the device in ESPHome to ensure that
+you can customize the firmware or update Wi-Fi credentials in case of changes to your network infrastructure.
+
+1. Open your Home Assistant UI
+2. Go to Settings -> Add-Ons and open the ESPHome addon
+3. Click on "Open Web UI"
+4. You should now see the discovered device, click "take control". If you like, change the name
 ![image](https://github.com/user-attachments/assets/04714647-a317-4312-9d11-c7755bf53faf)
 
-3. It will ask to update the device with encryption, click "install". It will take a while to build the new firmware
-![image](https://github.com/user-attachments/assets/38ce6137-78ff-4f72-aea1-fe9cc9cb473d)
+> [!NOTE]
+> If this process fails, you may have to create some additional secrets, such as `api_key`, `web_username`,
+> `web_password` and `hcp_wifi_ap_password` (and in some cases `wifi_ssid` and `wifi_password`) under "Secrets", as they
+> are defined in the imported configuration ([esphome.yaml](../esphome.yaml))
 
-4. When it finished uploading you will see the following log output, if this is the case you can press close and you are done
+5. When it finished uploading, you will see the following log output. If this is the case, you can press close and you 
+   are done
 ![image](https://github.com/user-attachments/assets/21efb5b9-3eea-4ca7-b932-d811f7a52831)
 
-In some cases you might have to configure your Wi-Fi credentials again.
+### Removing the sensors from the local configuration
+
+If you are not using any of the sensors (e.g. BME280), you can remove this configuration section to produce fewer
+warnings and errors.
+
+On the ESPHome UI, click on "Edit" to add the following line to the local configuration:
+`sensor: !remove`
+
+A minimal local configuration (i.e. hcpbridge.yaml) could contain the following:
+```
+packages:
+  tynet.hcpbridge_e4: github://Tysonpower/HCPBridgeMqtt_tynet/esphome.yaml@main
+
+# remove sensor section from the imported configuration to avoid related errors/warnings
+sensor: !remove
+```
+
+## Alternative Setup Procedure
 
 ### Set up ESPHome in Home Assistant from scratch
 
