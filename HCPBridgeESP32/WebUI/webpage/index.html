@@ -11,13 +11,13 @@
     body {max-width: 600px; margin:0px auto; padding-bottom: 25px;}
     .switch {position: relative; display: inline-block; width: 80px; height: 48px} 
     .switch input {display: none}
-    .slider {position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; border-radius: 6px}
-    .slider:before {position: absolute; content: ""; height: 32px; width: 32px; left: 8px; bottom: 8px; background-color: #fff; -webkit-transition: .4s; transition: .4s; border-radius: 3px}
-    input:checked+.slider {background-color: #b30000}
+    .slider {position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #dfe4ea; border-radius: 6px; width: 80px;}
+    .slider:before {position: absolute; content: ""; height: 32px; width: 32px; left: 8px; bottom: 8px; background-color: #a4b0be; -webkit-transition: .4s; transition: .4s; border-radius: 3px}
+    input:checked+.slider {background-color: #eccc68}
     input:checked+.slider:before {-webkit-transform: translateX(32px); -ms-transform: translateX(32px); transform: translateX(32px)}
 	
 	.btn {
-		background-color: whitesmoke;
+		background-color: #dfe4ea;
 		border: 0px;
 		color: black;
 		text-align: center;
@@ -30,16 +30,18 @@
 		border-radius: 8px;
 		padding: 8px 16px;
 		&:hover {
-			background-color: lightgray;
+			background-color: #ced6e0;
 		}
 	}
 
 	.btn-round {
-		border: 4px;
-		border-style: solid;
 		height: 100px;
 		width: 100px;
 		border-radius: 50px;
+	}
+
+	.btn-icon {
+		padding: 24px;
 	}
 
 	.hbox {
@@ -53,7 +55,7 @@
 		height: 60px;
 		background-color: #bbb;
 		background-color:#fff;
-		border:2px solid rgb(81, 0, 255);    
+		border:2px solid #5352ed;    
 		border-radius:50%;
 	}
 
@@ -62,12 +64,6 @@
 		vertical-align: middle;
 		text-align: center;
 	}
-
-	.btn-red {border-color: #ED5961;}
-	.btn-yellow {border-color: #fcca00;}
-	.btn-orange {border-color: #ffa500;}
-	.btn-green {border-color: #48bd81;}  
-	.btn-black {border-color: #000000;}
 	
 	.link-gray {
 		font-size: 1rem;
@@ -86,7 +82,7 @@
 		padding: 8px 8px;
 		margin: 8px 0;
 		box-sizing: border-box;
-		border: 2px solid grey;
+		border: 2px solid #a4b0be;
   		border-radius: 4px;
 		font-size: 1.2rem;
 	}
@@ -95,12 +91,12 @@
 		padding: 8px 8px;
 		margin: 8px 0;
 		box-sizing: border-box;
-		border: 2px solid grey;
+		border: 2px solid #a4b0be;
   		border-radius: 4px;
 		font-size: 1.2rem;
 	}
 
-	.flex label {
+	.flex label:not(.switch) {
 		min-width: 12rem;
 		text-align: left;
 	}
@@ -124,6 +120,10 @@
 		justify-content: space-between;
 	}
 
+	.flex.justify-evenly {
+		justify-content: space-evenly;
+	}
+
 	.subtitle {
 		text-align: left;
 		padding: 0rem 1rem;
@@ -132,24 +132,38 @@
   </style>
 </head>
 <body>
-  <h2 id="collapse">Garage Door</h2>  
-	<canvas width="250px" height="250px" id="dc"></canvas>
-	<h3 id="status">Waiting connection.</h3>
+  <h2 id="collapse">Garage Door</h2>
+
+	<div class="flex justify-evenly">
+		<div class="flex"  style="flex-direction: column; align-items: start;">
+			<button class="btn btn-round btn-icon" onclick="doCommand(1)">
+				<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9.001 10.978h-3.251c-.412 0-.75-.335-.75-.752 0-.188.071-.375.206-.518 1.685-1.775 4.692-4.945 6.069-6.396.189-.2.452-.312.725-.312.274 0 .536.112.725.312 1.377 1.451 4.385 4.621 6.068 6.396.136.143.207.33.207.518 0 .417-.337.752-.75.752h-3.251v9.02c0 .531-.47 1.002-1 1.002h-3.998c-.53 0-1-.471-1-1.002z" fill-rule="nonzero"/></svg>
+			</button>
+			<button class="btn btn-round btn-icon" onclick="doCommand(2)">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.919 10.431c.24.292.258 1.004-.027 1.284-.252.246-.52.205-1.051.205v-1.71c.503 0 .864-.039 1.078.221zm-5.438.149c-.19.581-.188 2.651 0 3.217.216.654 1.067.654 1.283 0 .19-.569.19-2.639 0-3.217-.214-.659-1.067-.662-1.283 0zm10.519-3.551v9.941l-7.029 7.03h-9.942l-7.029-7.029v-9.942l7.029-7.029h9.941l7.03 7.029zm-17.09 4.866c-1-.433-1.457-.478-1.457-1.142 0-.793.885-.792 1.119-.437.094.145.141.35.141.618h1.088v-.157c0-.268-.044-.498-.131-.689-.286-.633-.918-.823-1.61-.823-.541 0-.966.137-1.275.41-.661.583-.729 2.082.354 2.669.644.35 1.419.396 1.61.91.072.195.107.636-.158.851-.3.244-.837.227-1.066-.067-.162-.206-.149-.533-.149-.795h-1.136c0 .538.017 1.025.414 1.425.553.559 2.118.556 2.812.012.707-.557.861-2.163-.556-2.785zm4.93-2.52h-3.591v.929h1.229v4.693h1.134v-4.693h1.229v-.929zm3.879.709c-.135-.257-.327-.458-.58-.602-.508-.292-1.522-.292-2.031 0-.252.145-.444.345-.578.602-.435.835-.438 3.367 0 4.205.134.257.326.454.578.591.509.276 1.523.275 2.031 0 .253-.137.445-.333.58-.591.435-.838.434-3.37 0-4.205zm2.971-.709h-1.983v5.623h1.134v-2.244c.638 0 .939.021 1.338-.103 1.509-.466 1.509-3.276-.489-3.276z"/></svg>
+			</button>
+			<button class="btn btn-round btn-icon" onclick="doCommand(0)">
+				<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9.001 13.022h-3.251c-.412 0-.75.335-.75.752 0 .188.071.375.206.518 1.685 1.775 4.692 4.945 6.069 6.396.189.2.452.312.725.312.274 0 .536-.112.725-.312 1.377-1.451 4.385-4.621 6.068-6.396.136-.143.207-.33.207-.518 0-.417-.337-.752-.75-.752h-3.251v-9.02c0-.531-.47-1.002-1-1.002h-3.998c-.53 0-1 .471-1 1.002z" fill-rule="nonzero"/></svg>
+			</button>
+		</div>
+		<div>
+			<canvas width="250px" height="250px" id="dc"></canvas>
+			<h3 id="status">Waiting for connection.</h3>
+		</div>
+	</div>
+	
+	
 	<div class="hbox" style="display: none;" id="sensors">
 	</div>
 	
 	
 	<hr/>
-	<button class="btn btn-round btn-red" onclick="doCommand(1)">Up</button>
-	<button class="btn btn-round btn-yellow" onclick="doCommand(4)">Half</button>
-	<button class="btn btn-round btn-orange" onclick="doCommand(3)">Vent</button>
-	<button class="btn btn-round btn-black" onclick="doCommand(2)">Stop</button>
-	<button class="btn btn-round btn-green" onclick="doCommand(0)">Down</button>
-	<hr/>
-	<div class="hbox">
+	<div class="flex justify-evenly">
+		<button class="btn btn-round" onclick="doCommand(4)">Half</button>
 		<div>
 			<h4>Light</h4><label class="switch"><input type="checkbox" onchange="doCommand(5)" id="light"><span class="slider"></span></label>
 		</div>
+		<button class="btn btn-round" onclick="doCommand(3)">Vent</button>
 	</div>
 	<hr>
 	<br>
@@ -161,7 +175,10 @@
 		<div class="subtitle">
 			<h5>Wifi</h5>
 			<div class="flex">
-				<label for="wifi_ap_enabled">Enable Wifi AP</label>
+				<div class="form-label">
+					<label for="wifi_ap_enabled">Enable Wifi AP</label>
+					<small>uncheck to deactivate WIFI AP</small>
+				</div>
 				<input type="checkbox" id="wifi_ap_enabled" name="wifi_ap_enabled">
 			</div>
 			<div class="flex">
@@ -192,7 +209,10 @@
 				<input type="text" id="mqtt_pass" name="mqtt_pass">
 			</div>
 			<div class="flex">
-				<label for="device_id">Device ID</label>
+				<div class="form-label">
+					<label for="device_id">Device ID</label>
+					<small>no specials chars or spaces</small>
+				</div>
 				<input type="text" id="device_id" name="device_id">
 			</div>
 			<div class="flex">

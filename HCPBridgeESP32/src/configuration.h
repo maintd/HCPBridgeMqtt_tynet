@@ -8,6 +8,7 @@
     const bool AP_ACTIF = (bool)true;
     const char* STA_SSID   = "";
     const char* STA_PASSWD = "";
+    const char* AP_PASSWD = "tynet.eu";
 
     //RS485 pins
     #ifdef CONFIG_IDF_TARGET_ESP32S3
@@ -128,6 +129,6 @@
         const char *HA_ONLINE = "online";
         const char *HA_OFFLINE = "offline";
     #endif
-    const char *HA_VERSION = "0.0.7.2";
+    const char *HA_VERSION = "0.0.8.0";
 
 #endif

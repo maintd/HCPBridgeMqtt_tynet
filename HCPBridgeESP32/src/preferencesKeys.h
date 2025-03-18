@@ -21,6 +21,7 @@
 #define preference_wifi_ap_mode "wifi_ap_enabled"
 #define preference_wifi_ssid "wifi_ssid"
 #define preference_wifi_password "wifi_pass"
+#define preference_wifi_ap_password "wifi_ap_pass"
 #define preference_hostname "hostname"  //todo needs to be added in the Webui
 
 #define preference_gd_avail "gd_availability"
@@ -58,7 +59,7 @@
 
 std::vector<const char*> _keys =
 {
-        preference_started_before, preference_rs485_txd, preference_rs485_rxd, preference_wifi_ap_mode, preference_wifi_ssid, preference_wifi_password, preference_gd_id, 
+        preference_started_before, preference_rs485_txd, preference_rs485_rxd, preference_wifi_ap_mode, preference_wifi_ssid, preference_wifi_password, preference_wifi_ap_password, preference_gd_id, 
         preference_gd_name, preference_mqtt_server, preference_mqtt_server_port,
         preference_mqtt_user, preference_mqtt_password, preference_query_interval_sensors, preference_hostname,
         preference_gd_avail, preference_gd_light, preference_gd_vent, preference_gd_half, preference_gd_status, preference_gd_det_status,
@@ -72,7 +73,7 @@ std::vector<const char*> _keys =
 
 std::vector<const char*> _strings =
 {
-        preference_started_before, preference_wifi_ap_mode, preference_wifi_ssid, preference_wifi_password,
+        preference_started_before, preference_wifi_ap_mode, preference_wifi_ssid, preference_wifi_password, preference_wifi_ap_password,
         preference_gd_id, preference_gd_name, preference_mqtt_server,
         preference_mqtt_user, preference_mqtt_password, preference_hostname, 
         preference_gd_avail, preference_gd_light, preference_gd_vent, preference_gd_half, preference_gd_status, preference_gd_det_status,
@@ -136,6 +137,8 @@ class PreferenceHandler{
         this->preferences = new Preferences();
         this->preferences->begin("hcpbridgeesp32", false);
         this->firstStart = !preferences->getBool(preference_started_before);
+
+        preferences->putString(preference_wifi_ap_password, AP_PASSWD);
 
         if(this->firstStart){
             preferences->putBool(preference_started_before, true);

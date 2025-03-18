@@ -211,12 +211,6 @@ void switchLamp(bool on){
 }
 
 void connectToWifi() {
-  /*if (localPrefs->getBool(preference_wifi_ap_mode))
-  {
-    Serial.println("WIFI AP mode enabled, set Hostname");
-    WiFi.softAP(prefHandler.getPreferencesCache()->hostname);
-    return;
-  }*/
   if (localPrefs->getString(preference_wifi_ssid) != "")
   {
     Serial.println("Connecting to Wi-Fi...");
@@ -225,11 +219,6 @@ void connectToWifi() {
   {
     Serial.println("No WiFi Client enabled");
   }
-
-  //Serial.println("Connecting to Wi-Fi...");
-  //this disocnnect should not be necessary as we restart the esp after changing form AP mode to Station mode.
-  //WiFi.softAPdisconnect(true);  //stop AP, we now work as a wifi client
-
 }
 void connectToMqtt()
 {
@@ -949,14 +938,7 @@ const char* generateUniqueID() {
 void setup()
 {
   // Serial
-  Serial.begin(9600);
-
-/*
-  while (Serial.available()==0){
-    //only continues if an input get received from serial.
-    ;
-  } 
-*/  
+  Serial.begin(115200);
 
   // setup preferences
   prefHandler.initPreferences();
@@ -976,13 +958,12 @@ void setup()
   if (localPrefs->getBool(preference_wifi_ap_mode)){
     Serial.println("WIFI AP enabled");
     WiFi.mode(WIFI_AP_STA);
-    WiFi.softAP(prefHandler.getPreferencesCache()->hostname);
+    WiFi.softAP(prefHandler.getPreferencesCache()->hostname, localPrefs->getString(preference_wifi_ap_password).c_str());
     }
   else{
     WiFi.mode(WIFI_STA);  
   }
   
-
   WiFi.onEvent(WiFiEvent);
 
   // generate unique ID as mqttclientid

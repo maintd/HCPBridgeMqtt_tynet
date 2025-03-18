@@ -26,7 +26,7 @@ You want to use the ESPHome-based firmware? See our guide: [Getting started with
 
 ### 1. Connect the PCB to power via the USB-C connector and wait a few seconds. The 3V3 LED will be lit.
 
-### 2. With a phone or a PC, search and connect to the Wi-Fi network called "HCPBRIDGE" created by the PCB.
+### 2. Search and connect to the WIFI Network called "HCPBRIDGE" the PCB creates with a phone or pc using password "tynet.eu".
 
 ### 3. When connected, open a web browser and go to the Web UI under the following url: http://192.168.4.1
 
