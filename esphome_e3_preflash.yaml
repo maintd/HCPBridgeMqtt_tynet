@@ -146,3 +146,21 @@ button:
     impulse_button:
       id: button_impulse
       name: "${btn_impulse}"
+
+sensor:
+  - platform: bme280_i2c
+    temperature:
+      name: "BME280 Temperature"
+    pressure:
+      name: "BME280 Pressure"
+    humidity:
+      name: "BME280 Humidity"
+    address: 0x76 # can be 0x77 as well
+    update_interval: 30s
+  - platform: dht
+    pin: GPIO04
+    temperature:
+      name: "DHT Temperature"
+    humidity:
+      name: "DHT Humidity"
+    update_interval: 30s
