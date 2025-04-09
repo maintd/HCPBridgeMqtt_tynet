@@ -9,7 +9,7 @@ These instructions focus on the tynet.eu PCB version, but it will be really simi
 * [HCPBridge for Series 4](#series-4---preinstalled-firmware-non-esphome)
 * [HCPBridge for SupraMatic 3](#supramatic-3---preinstalled-firmware-esphome-based)
 
-You want to connect temperature sensors or something else? See our guide: [Connecting sensors on Tynet boards](connecting_sensors_prebuilt_pcbs)
+You want to connect temperature sensors or something else? See our guide: [Connecting sensors on Tynet boards](connecting_sensors_prebuilt_pcbs.md)
 
 You want to use the ESPHome-based firmware? See our guide: [Getting started with ESPHome](getting_started_esphome.md)
 
