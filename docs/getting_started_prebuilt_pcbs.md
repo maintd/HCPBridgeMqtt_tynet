@@ -87,6 +87,12 @@ Please follow our ESPHome instructions from the "Board Setup" step: [Getting sta
 
 ### 2. The SupraMatic e3 should power the pcb over RJ12 and all should be working now.
 
+## Mounting
+
+The E3 version doesen't fit into the case of the motor most of the time.
+One of my customers created a 3D printable model to mount the board outside.
+Download: [Tynet E3 HCP Case](https://makerworld.com/en/models/1307115-tynet-hormann-esp-hcp-emulator-case)
+
 
 # SupraMatic 4 - ESPHome-based firmware
 
