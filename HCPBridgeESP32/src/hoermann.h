@@ -12,7 +12,7 @@
         #define SIMULATEKEYPRESSDELAYMS 100
         #define DEADREPORTTIMEOUT 60000
 
-        #define RS485 Serial2
+        #define RS485 Serial1
 
         // workaround as my Supramatic did not Report the Status 0x0A when it's en vent Position
         // When the door is at position 0x08 and not moving Status get changed to Ventig.
